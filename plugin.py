@@ -27,7 +27,7 @@
 
 
 """
-<plugin key="tixi_tuya_smartplug_plugin" name="Tuya SmartPlug" author="tixi" version="3.0.0" externallink=" https://github.com/tixi/Domoticz-Tuya-SmartPlug-Plugin">
+<plugin key="tixi_tuya_smartswitch_plugin" name="Tuya SmartSwitch" author="Loky31" version="3.0.0" externallink=" https://github.com/Loky31/Domoticz-Tuya-SmartPlug-Plugin">
 	<params>
 		<param field="Address" label="IP address" width="200px" required="true"/>
 		<param field="Mode1" label="DevID" width="200px" required="true"/>
@@ -102,22 +102,22 @@ class Plug:
 	def update_state(self,state): #state: True <=> On ; False <=> Off
 		
 		if(state):
-			UpdateDevice(self.__dps_id, 1, "On")
-			if(self.__command == 'Off'):
+			UpdateDevice(self.__dps_id, 1, "1")
+			if(self.__command == '2'):
 				return True
 			else:
-				self.__command = None
+				self.__command = '3'
 		
 		elif(self.__alwaysON): #if not state: need to change the state for always_on devices
 			self.__command = 'On'
 			return True
 			
 		else:
-			UpdateDevice(self.__dps_id, 0, "Off")
-			if(self.__command == 'On'):
+			UpdateDevice(self.__dps_id, 1, "2")
+			if(self.__command == '1'):
 				return True
 			else:
-				self.__command = None
+				self.__command = '3'
 
 		return False
 	
