@@ -1,6 +1,6 @@
-# Domoticz-Tuya-SmartPlug-Plugin
+# Domoticz-Tuya-Smartswitch-Plugin
 
-A Domoticz plugin to manage Tuya Smart Plug (single and multi socket device)
+A Domoticz plugin to manage Tuya Smart Switch for curtain
 
 ## ONLY TESTED FOR Raspberry Pi
 
@@ -79,7 +79,7 @@ sudo /etc/init.d/domoticz.sh restart
 | **Local Key** | Local Key of the Smart Plug |
 | **DPS** |	1 for single socket device and a list of dps separated by ';' for multisocket device eg. 1;2;3;7
 | **DPS group** | None for single socket device and a list of list of dps separated by ':' for multisocket device eg. 1;2 : 3;7
-| **DPS always ON** | None for single socket device and a list of dps separated by ; for multisocket device eg. 1;2
+!!!!Do not use !!!! | **DPS always ON** | None for single socket device and a list of dps separated by ; for multisocket device eg. 1;2
 | **Debug** | default is 0 |
 
 **DPS** should only includes values that correspond to plug's dps id. Be careful some devices also have timers in the dps state.
